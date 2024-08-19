@@ -4,8 +4,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     request.onsuccess = function(event) {
         const db = event.target.result;
-        // Initialize with the current week
         [currentWeekStart, currentWeekEnd] = getCurrentWeekRange();
+        console.log('Week Start:', currentWeekStart);
+        console.log('Week End:', currentWeekEnd);
         displayHomeworkEntries(db);
     };
 
@@ -19,21 +20,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const weekElement = document.getElementById('week');
     
-        // Create new Date objects to avoid modifying the original start and end dates
         const displayStart = new Date(currentWeekStart);
         const displayEnd = new Date(currentWeekEnd);
         
-        // Add one day to the start and end dates
-        displayStart.setDate(displayStart.getDate() + 1);
-        displayEnd.setDate(displayEnd.getDate() + 1);
-        
-        // Format the dates
         const weekStartFormatted = formatDateWithoutYear(displayStart);
         const weekEndFormatted = formatDateWithoutYear(displayEnd);
         
         weekElement.innerText = `Week of ${weekStartFormatted} to ${weekEndFormatted}`;
 
-        // Adjust the IDs to match your HTML structure
         const dayDivs = {
             monday: document.getElementById('monday').querySelector('#workMax'),
             tuesday: document.getElementById('tuesday').querySelector('#workMax'),
@@ -44,10 +38,9 @@ document.addEventListener('DOMContentLoaded', function () {
             sunday: document.getElementById('sunday').querySelector('#workMaxEnd'),
         };
 
-        // Clear all sections before displaying
         Object.values(dayDivs).forEach(div => div.innerHTML = '');
 
-        const index = objectStore.index('date'); // Assuming you have an index on date
+        const index = objectStore.index('date'); 
         const range = IDBKeyRange.bound(currentWeekStart.toISOString(), currentWeekEnd.toISOString(), false, true);
 
         const request = index.openCursor(range);
@@ -57,13 +50,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (cursor) {
                 const { date, subject, type, description } = cursor.value;
-
-                // Determine day of the week from the date
                 const dayOfWeek = getDayOfWeek(new Date(date));
                 
-                console.log('Date:', date, 'Day of Week:', dayOfWeek); // Debug log
+                console.log('Date:', date, 'Day of Week:', dayOfWeek);
 
-                // Check if the day is in the dayDivs object
                 if (dayDivs[dayOfWeek]) {
                     const entry = document.createElement('div');
                     entry.className = subject.toLowerCase();
@@ -75,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     `;
                     dayDivs[dayOfWeek].appendChild(entry);
                 } else {
-                    console.warn('No section found for day:', dayOfWeek); // Debug log
+                    console.warn('No section found for day:', dayOfWeek);
                 }
 
                 cursor.continue();
@@ -93,47 +83,49 @@ document.addEventListener('DOMContentLoaded', function () {
         const now = new Date();
         const dayOfWeek = now.getDay(); // Sunday = 0, Monday = 1, ..., Saturday = 6
         const startOfWeek = new Date(now);
-        
-        // Calculate start of week (Monday)
-        const offsetToMonday = (dayOfWeek === 0 ? -7 : 1 - dayOfWeek); // If Sunday, set offset to -6, otherwise adjust to Monday
-        startOfWeek.setDate(now.getDate() + offsetToMonday);
-        startOfWeek.setHours(0, 0, 0, 0);
-
+    
+        // Adjust the start of the week to Monday
+        const offsetToMonday = (dayOfWeek === 0 ? -6 : dayOfWeek); // Sunday goes back 6 days, others adjust to Monday
+        startOfWeek.setDate(now.getDate()-offsetToMonday);
+        startOfWeek.setHours(0, 0, 0, 0); // Set to the start of the day
+    
         const endOfWeek = new Date(startOfWeek);
-        endOfWeek.setDate(startOfWeek.getDate() + 6); // End of the week (Sunday)
-        endOfWeek.setHours(23, 59, 59, 999);
-
+        endOfWeek.setDate(startOfWeek.getDate() + 6); // Sunday of the same week
+        endOfWeek.setHours(23, 59, 59, 999); // End of the day
+    
         return [startOfWeek, endOfWeek];
-    }
+    }    
 
-    // Corrected function to get day of the week starting from Monday
     function getDayOfWeek(date) {
-        const days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+        const days = ['tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'monday'];
         let dayIndex = date.getDay(); // Sunday = 0, Monday = 1, ..., Saturday = 6
-        return days[(dayIndex + 7) % 7]; // Adjust to map Sunday to the last day
-    }
+        return days[(dayIndex + 6) % 7]; // Adjust to map Sunday to the last day
+    }    
 
-    // Helper function to format a date without the year
     function formatDateWithoutYear(date) {
+        // Create a new date object so that the original date is not modified
+        const adjustedDate = new Date(date);
+        
+        // Add 1 to the date
+        adjustedDate.setDate(adjustedDate.getDate() + 1);
+        
+        // Format the date without the year
         const options = { day: 'numeric', month: 'long' };
-        return date.toLocaleDateString(undefined, options);
+        return adjustedDate.toLocaleDateString(undefined, options);
     }
 
-    // Update the week based on button clicks
     document.getElementById('leftWeek').addEventListener('click', function() {
-        updateWeek(-7); // Go to the previous week
+        updateWeek(-7);
     });
 
     document.getElementById('rightWeek').addEventListener('click', function() {
-        updateWeek(7); // Go to the next week
+        updateWeek(7);
     });
 
     function updateWeek(days) {
-        // Adjust the current week start and end dates
         currentWeekStart.setDate(currentWeekStart.getDate() + days);
         currentWeekEnd.setDate(currentWeekEnd.getDate() + days);
 
-        // Re-display the homework entries with the updated week
         const request = indexedDB.open('Homework', 4);
         request.onsuccess = function(event) {
             const db = event.target.result;
