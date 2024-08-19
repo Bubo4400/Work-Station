@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=1530, height=700">
+        <title>Homework</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="homework.css">
+        <link rel="icon" href="work.png">
+    </head>
+    <body>
+        <div class="cover"></div>
+
+        <div class="title">
+            <img src="work.png" class="icon">
+            <h1>HOMEWORK</h1>
+        </div>
+
+        <div class="pages">
+            <div class="select">
+                <img src="house.png" class="iconSelect" style="top: 1rem">
+                <a class="nameSelect" href="index.html">HOME</a>
+            </div>
+
+            <div class="select">
+                <img src="work.png" class="iconSelect">
+                <a class="nameSelect" href="Homework.html">HOMEWORK</a>
+            </div>
+        </div>
+
+        <div id="weekly">
+            <h2>WEEKLY WORK</h2>
+
+            <button id="leftWeek"><</button> <button id="rightWeek">></button>
+
+            <div id="monday">
+                <h3 id="mondayText">MONDAY</h3>
+
+                <div id="workMax">
+                    
+                </div>
+            </div>
+
+            <div id="tuesday">
+                <h3 id="tuesdayText">TUESDAY</h3>
+                <div id="workMax">
+
+                </div>
+            </div>
+
+            <div id="wednesday">
+                <h3 id="wednesdayText">WEDNESDAY</h3>
+
+                <div id="workMax">
+                    
+                </div>
+            </div>
+
+            <div id="thursday">
+                <h3 id="thursdayText">THURSDAY</h3>
+
+                <div id="workMax">
+
+                </div>
+            </div>
+
+            <div id="friday">
+                <h3 id="fridayText">FRIDAY</h3>
+
+                <div id="workMax">
+
+                </div>
+            </div>
+
+            <div id="sunday">
+                <h3 id="sundayText">SUNDAY</h3>
+
+                <div id="workMaxEnd">
+
+                </div>
+            </div>
+
+            <div id="saturday">
+                <h3 id="saturdayText">SATURDAY</h3>
+
+                <div id="workMaxEnd">
+                    
+                </div>
+            </div>
+
+            <h4 id="week">Week of the ... to the ...</h4>
+        </div>
+
+        <div id="monthly-container">
+            <h2>MONTHLY WORK:</h2>
+
+            <h4 id="month">...</h4>
+
+            <button id="leftMonth"><</button> <button id="rightMonth">></button>
+            
+            <div id="monthly">
+
+            </div>
+        </div>
+
+        <div id="addWork">
+            <h2>ADD HOMEWORK:</h2>
+
+            <form id="addWorks" action="Homework.html">
+                <input type="date" id="date" name="Date">
+                <select name="Subject" id="subject">
+                    <option value="Maths">Maths</option>
+                    <option value="English">English</option>
+                    <option value="Physics">Physics</option>
+                    <option value="Electronics">Electronics</option>
+                </select>
+                <select name="Type" id="type">
+                    <option value="Work">Work</option>
+                    <option value="Exam">Exam</option>
+                    <option value="Project">Project</option>
+                </select>
+                <textarea name="Description" id="description"></textarea>
+                <input type="submit" id="submit">
+            </form>
+
+        </div>
+        
+        <div id="remove">
+            <h2>REMOVE WORK:</h2>
+
+            <input type="date" id="removeDate">
+            <select name="removeWork" id="removeWork">
+
+            </select>
+            <input type="button" id="removeSubmit" value="REMOVE">
+        </div>
+        
+        <script src="addWork.js"></script>
+        <script src="weekLoader.js"></script>
+        <script src="monthLoader.js"></script>
+        <script src="removeWork.js"></script>
+    </body>
+</html>
