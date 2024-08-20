@@ -1,0 +1,97 @@
+@font-face {
+    font-family: 'Pixel';
+    src: url("pixel.TTF") format("truetype");
+}
+
+body {
+    background-color: #212121;
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in WebKit-based browsers */
+}
+
+h1 {
+    font-family: 'Pixel';
+    position: relative;
+    top: -5.8rem;
+    left: 8rem;
+    color: #c2dfE3;
+}
+
+a, p {
+    font-family: 'Pixel';
+    color: #36827f;
+}
+
+h2 {
+    font-family: 'Pixel';
+    color: #c2dfE3; 
+    text-align: center;   
+}
+
+h4 {
+    position: inherit;
+    font-family: 'Pixel';
+    color: #c2dfE3; 
+    text-align: left;
+    left: 0.5rem;
+    top: -1rem;
+}
+
+.cover {
+    position: relative;
+    top: -1rem;
+    left: -1rem;
+    height: 35vh;
+    width: 100.5vw;
+    
+    background-image: url('cover.gif');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.title {
+    position: relative;
+    font-size: 150%;
+    top: -5rem;
+    left: 10rem;
+    width: 10rem;
+    height: 5rem;
+}
+
+.icon {
+    position: inherit;
+    height: 6.8rem;
+    width: 6.8rem;
+}
+
+.pages {
+    position: relative;
+    left: 5rem;
+    height: 7.3rem;
+    width: 13rem;
+    border: 1px solid #556F44;
+    border-radius: 10px;
+}
+
+.select {
+    position: relative;
+    left: 1.5rem;
+    height: 2.8rem;
+}
+
+.iconSelect {
+    position: relative;
+    top: 1rem;
+    height: 2rem;
+    width: 2rem;
+}
+
+.nameSelect {
+    position: relative;
+    top: 0.6rem;
+    left: 1rem;
+}

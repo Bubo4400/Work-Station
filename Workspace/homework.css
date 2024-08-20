@@ -1,0 +1,604 @@
+#weekly {
+    position: relative;
+    top: -9rem;
+    left: 20rem;
+    height: 30rem;
+    width: 70rem;
+    border: 3px solid #556F44;
+    border-radius: 10px;
+}
+
+#week {
+    position: inherit;
+    top: 1rem;
+    left: 3rem;
+    float: left;
+}
+
+#leftWeek {
+    position: relative;
+    top: -3rem;
+    float: right;
+    right: 4.5rem;
+    background: #2C2D2E;
+    border: 2px solid #a53860;
+    border-radius: 5px;
+    color: #93c0c2;
+    font-weight: bold;
+    font-size: larger;
+}
+
+#rightWeek {
+    position: relative;
+    top: -3rem;
+    float: right;
+    right: 1rem;
+    background: #2C2D2E;
+    border: 2px solid #a53860;
+    border-radius: 5px;
+    color: #93c0c2;
+    font-weight: bold;
+    font-size: larger;
+}
+
+
+#monday {
+    position: relative;
+    float: left;
+    left: 0.6rem;
+    margin-right: 0.8rem;
+    height: 17rem;
+    width: 13rem;
+    border: 0.5px solid #2a52af;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#tuesday {
+    position: relative;
+    float: left;
+    margin-left: 0.8rem;
+    height: 17rem;
+    width: 13rem;
+    border: 0.5px solid #f4b860;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+#wednesday {
+    position: relative;
+    float: left;
+    margin-left: 0.8rem;
+    height: 17rem;
+    width: 13rem;
+    border: 0.5px solid #65b44e;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+#thursday {
+    position: relative;
+    float: left;
+    margin-left: 0.8rem;
+    height: 17rem;
+    width: 13rem;
+    border: 0.5px solid #6f09c8;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+#friday {
+    position: relative;
+    float: left;
+    margin-left: 0.8rem;
+    height: 17rem;
+    top: -1.8rem;
+    width: 13rem;
+    border: 0.5px solid #edb6a3;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+#saturday {
+    position: relative;
+    float: right;
+    top: -1rem;
+    right: 0.5rem;
+    height: 7rem;
+    width: 13rem;
+    border: 0.5px solid #ae759f;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+#sunday {
+    position: relative;
+    float: right;
+    top: -1rem;
+    margin-right: 1.5rem;
+    height: 7rem;
+    width: 13rem;
+    border: 0.5px solid #ae759f;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+#mondayText {
+    font-family: 'Pixel';
+    color: #2a52af;
+}
+
+#tuesdayText {
+    font-family: 'Pixel';
+    color: #f4b860;
+}
+
+#wednesdayText {
+    font-family: 'Pixel';
+    color: #65b44e;
+}
+
+#thursdayText {
+    font-family: 'Pixel';
+    color: #6f09c8;
+}
+
+#fridayText {
+    font-family: 'Pixel';
+    color: #edb6a3;
+}
+
+#saturdayText {
+    font-family: 'Pixel';
+    color: #ae759f;
+}
+
+#sundayText {
+    font-family: 'Pixel';
+    color: #ae759f;
+}
+
+#workMax {
+    position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-height: 13.3rem;
+    max-height: 13.3rem;
+}
+
+#workMax::-webkit-scrollbar {
+    display: none;
+}
+
+#workMaxEnd {
+    position: relative;
+    top: -1rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-height: 4.3rem;
+    max-height: 4.3rem;
+}
+
+#workMaxEnd::-webkit-scrollbar {
+    display: none;
+}
+
+.maths {
+    position: relative;
+    top: 0.5rem;
+    left: 0.5rem;
+    height: 3rem;
+    width: 12rem;
+    border: 0.5px solid #697d64;
+    background-color: #191919;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+
+.maths:hover .workDetail {
+    display: block;
+}
+
+.english {
+    position: relative;
+    top: 0.5rem;
+    left: 0.5rem;
+    height: 3rem;
+    width: 12rem;
+    border: 0.5px solid #f3f8f7;
+    background-color: #191919;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+
+.english:hover .workDetail {
+    display: block;
+}
+
+.physics {
+    position: relative;
+    top: 0.5rem;
+    left: 0.5rem;
+    height: 3rem;
+    width: 12rem;
+    border: 0.5px solid #6162f3;
+    background-color: #191919;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+
+.physics:hover .workDetail {
+    display: block;
+}
+
+.electronics {
+    position: relative;
+    top: 0.5rem;
+    left: 0.5rem;
+    height: 3rem;
+    width: 12rem;
+    border: 0.5px solid #e9d956;
+    background-color: #191919;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+
+.electronics:hover .workDetail {
+    display: block;
+}
+
+.workMiniTitle {
+    font-size: 110%;
+}
+
+.workDetail {
+    display: none;
+    position: absolute;
+    left: -0.5rem;
+    min-height: 2rem;
+    max-height: 10rem;
+    min-width: 12.75rem;
+    background-color: #2C2D2E;
+    border-radius: 10px;
+    border: 2px solid #a53860;
+    z-index: 1;
+}
+
+.workDetailText {
+    color: #93c0c2;
+}
+
+#monthly-container {
+    position: relative;
+    top: -8rem;
+    left: 20rem;
+    width: 70rem;
+    border: 3px solid #556F44;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#monthly-container h2 {
+    margin: 1rem auto 0   auto;
+    text-align: center;
+}
+
+#month {
+    position: relative;
+    top: 0rem;
+}
+
+#leftMonth {
+    position: relative;
+    top: 2.5rem;
+    height: 1.8rem;
+    float: right;
+    right: 4rem;
+    background: #2C2D2E;
+    border: 2px solid #a53860;
+    border-radius: 5px;
+    color: #93c0c2;
+    font-weight: bold;
+    font-size: larger;
+}
+
+#rightMonth {
+    position: relative;
+    top: 2.5rem;
+    height: 1.8rem;
+    float: right;
+    right: 3.7rem;
+    background: #2C2D2E;
+    border: 2px solid #a53860;
+    border-radius: 5px;
+    color: #93c0c2;
+    font-weight: bold;
+    font-size: larger;
+}
+
+
+#monthly {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+.day {
+    position: relative;
+    left: 0.6rem;
+    margin: 0.3rem;
+    height: 8rem;
+    width: 9rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+}
+
+.day.today {
+    background-color: #3d3d3d; /* Highlight color */
+}
+
+
+.w1 {
+    border-color: #2a52af;
+}
+
+.w2 {
+    border-color: #e9d956;
+}
+
+.w3 {
+    border-color: #65b44e;
+}
+
+.w4 {
+    border-color: #6f09c8;
+}
+
+.w5 {
+    border-color: #edb6a3;
+}
+
+.day.empty {
+    visibility: hidden;
+}
+
+.monthMiniTitle {
+    position: inherit;
+    font-size: 110%;
+    top: -0.5rem;
+}
+
+.monthMax {
+    position: relative;
+    top: 1.9rem;
+    left: -1.5rem;
+    justify-content: center;
+    min-width: 15rem;
+    overflow-y: auto;
+    overflow-x: auto;
+    min-height: 5.8rem;
+    max-height: 5.8rem;
+}
+
+.monthMax::-webkit-scrollbar {
+    display: none;
+}
+
+.monthMaths {
+    position: relative;
+    left: 0.5rem;
+    height: 2rem;
+    width: 8rem;
+    border: 0.5px solid #697d64;
+    background-color: #191919;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+
+.monthMaths:hover .monthDetail {
+    display: block;
+}
+
+.monthEnglish {
+    position: relative;
+    left: 0.5rem;
+    height: 2rem;
+    width: 8rem;
+    border: 0.5px solid #f3f8f7;
+    background-color: #191919;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+
+.monthEnglish:hover .monthDetail {
+    display: block;
+}
+
+.monthPhysics {
+    position: relative;
+    left: 0.5rem;
+    height: 2rem;
+    width: 8rem;
+    border: 0.5px solid #6162f3;
+    background-color: #191919;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+
+.monthPhysics:hover .monthDetail {
+    display: block;
+}
+
+.monthElectronics {
+    position: relative;
+    left: 0.5rem;
+    height: 2rem;
+    width: 8rem;
+    border: 0.5px solid #e9d956;
+    background-color: #191919;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+
+.monthElectronics:hover .monthDetail {
+    display: block;
+}
+
+.monthDetail {
+    display: none;
+    position: absolute;
+    left: -0.5rem;
+    min-height: 2rem;
+    max-height: 10rem;
+    min-width: 8.75rem;
+    background-color: #2C2D2E;
+    border-radius: 10px;
+    border: 2px solid #a53860;
+    z-index: 1;
+}
+
+.monthDetailText {
+    color: #93c0c2;
+}
+
+#addWork {
+    position: relative;
+    top: -7rem;
+    left: 43rem;
+    height: 10rem;
+    width: 45rem;
+    border: 3px solid #556F44;
+    border-radius: 10px;
+}
+
+#date {
+    position: relative;
+    left: 0.5rem;
+    top: -1.5rem;
+    height: 2rem;
+    width: 7rem;
+    color: #36827f;
+    background-color: #2C2D2E;
+    font-size: 110%;
+    font-weight: bold;
+    border: 2px solid #a53860;
+    border-radius: 5px;
+}
+
+#subject {
+    position: relative;
+    left: 0.5rem;
+    top: -1.45rem;
+    height: 2.16rem;
+    width: 8rem;
+    color: #36827f;
+    background-color: #2C2D2E;
+    font-size: 110%;
+    font-weight: bold;
+    border: 2px solid #a53860;
+    border-radius: 5px;
+}
+
+#type {
+    position: relative;
+    left: 0.5rem;
+    top: -1.45rem;
+    height: 2.16rem;
+    width: 5.5rem;
+    color: #36827f;
+    background-color: #2C2D2E;
+    font-size: 110%;
+    font-weight: bold;
+    border: 2px solid #a53860;
+    border-radius: 5px;
+}
+
+#description {
+    position: relative;
+    left: 0.5rem;
+    top: 0rem;
+    height: 3rem;
+    width: 22rem;
+    color: #36827f;
+    background-color: #2C2D2E;
+    font-size: 115%;
+    font-weight: bold;
+    border: 2px solid #a53860;
+    border-radius: 5px;
+    resize: none;
+}
+
+#submit {
+    position: relative;
+    float: right;
+    right: 1rem;
+    top: -0.3rem;
+    color: #36827f;
+    background-color: #2C2D2E;
+    font-size: 110%;
+    font-weight: bold;
+    border: 2px solid #a53860;
+    border-radius: 5px;
+}
+
+#remove {
+    position: relative;
+    top: -6rem;
+    left: 68em;
+    height: 12rem;
+    width: 20rem;
+    border: 3px solid #556F44;
+    border-radius: 10px;
+}
+
+#removeDate {
+    position: relative;
+    left: 6.5rem;
+    top: -0.5rem;
+    height: 2rem;
+    width: 7rem;
+    color: #36827f;
+    background-color: #2C2D2E;
+    font-size: 110%;
+    font-weight: bold;
+    border: 2px solid #a53860;
+    border-radius: 5px;
+}
+
+#removeWork {
+    position: relative;
+    left: 1rem;
+    height: 2.16rem;
+    width: 18.5rem;
+    color: #36827f;
+    background-color: #2C2D2E;
+    font-size: 110%;
+    font-weight: bold;
+    border: 2px solid #a53860;
+    border-radius: 5px;
+}
+
+#removeSubmit {
+    position: relative;
+    float: right;
+    right: 1rem;
+    top: 1rem;
+    color: #36827f;
+    background-color: #2C2D2E;
+    font-size: 110%;
+    font-weight: bold;
+    border: 2px solid #a53860;
+    border-radius: 5px;
+}
