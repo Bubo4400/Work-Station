@@ -1,13 +1,41 @@
-# Work Station
-Couldn't manage to work out notion so made it instead!!!
-A little planner environment where you can mainly organise your homework and also add some of your plans for the week.
+# 🧠 Work Station  
+A personal workspace designed to help you organize homework, track upcoming exams, and plan your week — all in one place.  
+Built as a lightweight alternative to Notion, **Work Station** gives you a simple, offline planner environment that’s easy to customize and maintain.
 
-# How to use:
- - To use just download the Workspace folder and open the index.html file.
- - To customise the cover change the cover.gif file to whatever you want. (currently there's a cover.gif which is the current one and there's a cover2.gif which is a secondary one to use rename the current one and remove the '2')
- - To customise the colors you can go into the home.css to change the home page colors, and the homework.css to change the colors in the homework page. The style.css is to change the background color and the color or font of the text. (Beware not all of the color of texts are set in the style.css)
+---
 
-# Beware:
- - You can not remove the plans for the Week.
- - It does not currently sync between devices. (Maybe coming soon)
- - All information older than a month old is considered no longer useful so it is automatically removed to free up room for more information.
+## 🚀 Getting Started  
+1. **Download** the entire `Workspace` folder.  
+2. **Open** the `index.html` file in your browser to launch the planner.  
+3. **Customize** your setup:
+   - **Cover Image:** Replace `cover.gif` with your own image.  
+     - A secondary option, `cover2.gif`, is included — rename it to `cover.gif` to use it.  
+   - **Colors & Styles:**  
+     - `home.css` — controls the home page colors.  
+     - `homework.css` — controls the homework page colors.  
+     - `style.css` — adjusts background color, fonts, and general text styling.  
+       *(Note: not all text colors are defined in `style.css`.)*
+
+---
+
+## ⚙️ Features  
+- 🗓️ **Homework Management:** Add, view, and automatically clean up homework older than one month.  
+- 🎉 **Weekly Plans:** Keep track of personal events and activities.  
+- 📚 **Exam Tracker:** View upcoming exams sorted by date.  
+- 📆 **Monthly & Weekly Views:** Navigate through your tasks visually.  
+- 💾 **Offline Storage:** Uses IndexedDB — all data is stored locally on your device.
+
+---
+
+## ⚠️ Important Notes  
+- Plans for the week **cannot be removed** once added.  
+- Data **does not sync** between devices (feature planned for future updates).  
+- Entries older than one month are **automatically deleted** to keep your workspace clean and efficient.
+
+---
+
+## 💡 Customization Tips  
+Want to make it your own?  
+- Adjust color palettes in the CSS files to match your aesthetic.  
+- Replace the cover image with something that inspires you.  
+- Modify font styles or add new subjects and plan types directly in the JavaScript files.
